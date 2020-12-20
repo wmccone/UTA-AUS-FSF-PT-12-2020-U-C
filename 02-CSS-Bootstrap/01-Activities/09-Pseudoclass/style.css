@@ -1,0 +1,11 @@
+a:hover{
+    background-color: blue;
+}
+
+a:active{
+    background-color: darkgoldenrod;
+}
+
+a:focus{
+    background-color: crimson;
+}
