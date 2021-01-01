@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+
+    // prompt user for input- pick rock, paper, or scissors
+
+ 
+
+    // check if user input is rock, paper , or scissors
+ var score
+    for (var i = 0; i < 3; i++) {
+      
+      var user = prompt("Choose Rock, Paper, or Scissors");
+      var comp = "";
+      user = user.toLowerCase()
+      console.log(user)
+      if ((user !== "rock") && (user !== "paper") && (user !== "scissors")) {
+        
+        // if user input isnt any of those alert them to bad input
+        alert("You must pick rock, paper, or scissors.... Pick again");
+
+        i--
+      
+      }
+      else {
+        // Generate a random number between 1 and 3
+        var num = Math.floor(Math.random() * 3);
+
+        // Display in console
+        console.log(num);
+
+        // computer picks rock paper or scissors  
+        if (num === 1) {
+          comp = "rock"
+        }
+
+        else if (num === 2) {
+          comp = "paper"
+        }
+
+        else {
+          comp = "scissors"
+        }
+      
+      // If tie then go through the loop again
+      if (user === comp) {
+        alert(user + " caused a tie!");
+      }
+
+      // if user plays rock over computer playing scissors, user wins and they get an alert
+
+      else if ((user === "rock" && comp === "scissors") || (user === "scissors" && comp == "paper") || (user === "paper" && comp == "rock") ) {
+        alert("User Wins, user chose " + user + " and computer chose " + comp);
+      }
+
+      // if user plays scissors over computer playing paper, user wins and they get an alert
+
+      // else if (user === "scissors" && comp == "paper") {
+      //   // alert("Computer chose paper, scissors wins");
+      // }
+
+      // // If user plays paper over computer playing rock, user wins and they get an alert
+
+      // else if (user === "paper" && comp == "rock") {
+      //   alert("Computer chose rock, paper wins");
+      // }
+
+      // // If else then user gets an alet that they lost.
+      else {
+        alert("Computer Wins")
+      }
+    }
+    }
+
+
+
+
+
+
+// re-prompt user to pick a new option if bad input
+
+
+
+// re-prompt user to pick a new option
+
+
+
+
+  </script>
+</body>
+
+</html>
