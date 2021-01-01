@@ -11,27 +11,38 @@
 
   <script type="text/javascript">
 
-    // prompt user for input- pick rock, paper, or scissors
-
- 
-
-    // check if user input is rock, paper , or scissors
- var score
-    for (var i = 0; i < 3; i++) {
+    
+// Set score to 0
+    var userScore = 0
+    var compScore = 0
+    
+    
+    for (var i = 0; i < 12; i++) {
+      // prompt user for input- pick rock, paper, or scissors
       
-      var user = prompt("Choose Rock, Paper, or Scissors");
       var comp = "";
+
+      if (userScore === 6){
+        alert("Congratulations, you have beaten the computer I hope you feel good about yourself")
+      }
+
+      else if (compScore === 6) {
+        alert("Bummer, it looks like the computer got you this time refresh to try again")
+      }
+
+      else {
+      var user = prompt("Choose Rock, Paper, or Scissors");
       user = user.toLowerCase()
       console.log(user)
+      // check if user input is rock, paper , or scissors
       if ((user !== "rock") && (user !== "paper") && (user !== "scissors")) {
-        
+        (i--)
         // if user input isnt any of those alert them to bad input
         alert("You must pick rock, paper, or scissors.... Pick again");
-
-        i--
-      
       }
       else {
+
+    
         // Generate a random number between 1 and 3
         var num = Math.floor(Math.random() * 3);
 
@@ -53,30 +64,29 @@
       
       // If tie then go through the loop again
       if (user === comp) {
+        (i--)
         alert(user + " caused a tie!");
       }
 
       // if user plays rock over computer playing scissors, user wins and they get an alert
+      // if user plays scissors over computer playing paper, user wins and they get an alert
+      // If user plays paper over computer playing rock, user wins and they get an alert
 
       else if ((user === "rock" && comp === "scissors") || (user === "scissors" && comp == "paper") || (user === "paper" && comp == "rock") ) {
-        alert("User Wins, user chose " + user + " and computer chose " + comp);
+        (userScore++)
+        alert("User Wins, user chose " + user + " and computer chose " + comp + ", the score is now User: " + userScore + " Computer: " +compScore);
       }
 
-      // if user plays scissors over computer playing paper, user wins and they get an alert
-
-      // else if (user === "scissors" && comp == "paper") {
-      //   // alert("Computer chose paper, scissors wins");
-      // }
-
-      // // If user plays paper over computer playing rock, user wins and they get an alert
-
-      // else if (user === "paper" && comp == "rock") {
-      //   alert("Computer chose rock, paper wins");
-      // }
+     
 
       // // If else then user gets an alet that they lost.
       else {
-        alert("Computer Wins")
+        (compScore++)
+        alert("Computer Wins, user chose " + user + " and computer chose " + comp + ", the score is now User: " + userScore + " Computer: " +compScore);
+      }
+
+     
+        
       }
     }
     }
