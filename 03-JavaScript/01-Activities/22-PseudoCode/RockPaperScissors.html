@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+
+        // Set score to 0
+
+        var userScore = 0
+        var compScore = 0
+
+        // create a loop for 12 rounds
+        for (var i = 0; i < 12; i++) {
+
+            var comp = "";
+            // if user gets to 6 they get a notification
+            if (userScore === 6) {
+                alert("Congratulations, you have beaten the computer I hope you feel good about yourself")
+
+                i = 12
+            }
+
+
+            // if computer gets to 6 user gets a notification to start over by refreshing
+            else if (compScore === 6) {
+                alert("Bummer, it looks like the computer got you this time refresh to try again")
+
+                i = 12
+            }
+
+            else {
+
+                // prompt user for input- pick rock, paper, or scissors
+                var user = prompt("Choose Rock, Paper, or Scissors");
+                user = user.toLowerCase()
+
+                // check if user input is rock, paper , or scissors
+                if (user !== "rock" && user !== "paper" && user !== "scissors") {
+                    i--
+
+                    // if user input isnt any of those alert them to bad input
+                    alert("You must pick rock, paper, or scissors.. Go ahead and try again");
+                }
+                else {
+
+
+                    // Generate a random number between 1 and 3
+                    var num = Math.floor(Math.random() * 3);
+
+                    // computer picks rock paper or scissors  
+                    if (num === 1) {
+                        comp = "rock"
+                    }
+
+                    else if (num === 2) {
+                        comp = "paper"
+                    }
+
+                    else {
+                        comp = "scissors"
+                    }
+
+                    // If tie then go through the loop again
+                    if (user === comp) {
+                        i--
+                        alert(user + " caused a tie!");
+                    }
+
+                    // If user picks Rock/Scissors/Paper over the computer picking Scissors/Paper/Rock then the user wins and gets a point
+
+                    else if ((user === "rock" && comp === "scissors") || (user === "scissors" && comp == "paper") || (user === "paper" && comp == "rock")) {
+                        userScore++
+                        alert("User Wins, user chose " + user + " and computer chose " + comp + ", the score is now User: " + userScore + " Computer: " + compScore);
+                    }
+
+
+
+                    // If else then user gets an alet that they lost. Computer gets a point.
+                    else {
+                        compScore++
+                        alert("Computer Wins, user chose " + user + " and computer chose " + comp + ", the score is now User: " + userScore + " Computer: " + compScore);
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
