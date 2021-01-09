@@ -12,11 +12,17 @@ var li1 = document.createElement("li");
 var li2 = document.createElement("li");
 var li3 = document.createElement("li");
 var li4 = document.createElement("li");
+var linechange = document.querySelectorAll("li");
 
 h1El.textContent = "Welcome to my page";
 kittenEl.textContent = "This is my kitten 🐱.";
 nameEl.textContent = "His name is Jax.";
 favoriteEl.textContent = "My favorite foods are:";
+
+li1.textcontent = "tuna";
+li2.textcontent = "Pizza";
+li3.textcontent = "Calzones";
+li4.textcontent = "Dogfood";
 
 body.appendChild(h1El);
 body.appendChild(infoEl);
@@ -36,3 +42,16 @@ kittenEl.setAttribute("style", "font-size:25px; text-align:center;");
 favoriteEl.setAttribute("style", "font-size:20px;");
 
 // TODO: Add ordered list items containing four favorite foods
+
+//adds text
+
+
+listEl.appendChild(li1);
+listEl.appendChild(li2);
+listEl.appendChild(li3);
+listEl.appendChild(li4);
+
+// for (var i = 0; i < linechange.length; i++) {
+//     linechange.setattribute("style", "color:blue; font-size: 30px; font-weight: bold; padding: 10px; margin: 0");
+//    }
+// document.body
