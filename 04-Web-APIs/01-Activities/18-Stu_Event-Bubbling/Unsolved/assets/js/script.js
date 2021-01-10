@@ -1,6 +1,8 @@
 // TODO: Which element is the following line of code selecting?
+//This is selecting the image box
 var carousel = document.querySelector(".carouselbox");
 // TODO: Which element is the following line of code selecting?
+//
 var next = carousel.querySelector(".next");
 var prev = carousel.querySelector(".prev");
 var index = 0;
