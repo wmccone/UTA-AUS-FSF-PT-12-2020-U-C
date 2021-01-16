@@ -33,8 +33,20 @@
   <h1 class="text-center" id="random-number"></h1>
 
   <script type="text/javascript">
-    $(document).ready(function () {
 
+    $(document).ready(function () {
+      var randoEl = $("#random-number")
+      var randomnum = ""
+      $("#random-button").on("click", function(){
+        
+        // console.log(rando)
+        randoEl.text(rando)
+        for (var i = 0; i < 9; i++) {
+          var rando = Math.floor(Math.random() * 10)
+          randomfinal= rando + randomfinal
+          console.log(randomnum)
+        }
+      })
       //jquery code here
 
     });

@@ -13,6 +13,9 @@ var studentGrade = {
   comment: comment.value.trim()
 };
 
+// var stringified = JSON.stringify(studentGrade)
+// console.log('stringified', typeof stringified, stringified)
+
 localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
 renderMessage();
 

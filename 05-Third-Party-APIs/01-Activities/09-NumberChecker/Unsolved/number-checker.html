@@ -64,8 +64,21 @@
 
             // Here we create the on click event that gets the user's pick
             $(".btn-choice").on("click", function() {
+              var rando = Math.floor(Math.random() * 5)
+              $("#computer-pick").text(rando)
 
               console.log("You clicked a button!!");
+
+              var humanPick = this.value
+
+              if(rando == humanPick){
+                $("#result").text("You Win!")
+              }
+              
+              else {
+                $("#result").text("You lose!")
+              }
+
 
               // Add code to have the computer guess a random number between 1 and 4
               // Then determine which button was clicked

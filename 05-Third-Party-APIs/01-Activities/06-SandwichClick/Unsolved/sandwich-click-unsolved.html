@@ -31,7 +31,22 @@
       // ====================================================================
       // Here we create variables for tracking the number of sandwiches eaten
       // ...
-
+      var pbSando = 0
+      var gcSando = 0
+      var rbSando = 0
+      $('#pbj').on("click", function(){
+        pbSando++;
+        alert("You have eaten "+ pbSando + " butter boi sando... great job");
+      });
+      $('#grilledcheese').on("click", function(){
+        gcSando++;
+        alert("You have eaten "+ gcSando + " cheesy mess sando... great job");
+      });
+      $('#roastbeef').on("click", function(){
+        rbSando++;
+        alert("You have eaten "+ rbSando + " beef boi sando... great job");
+      });
+      
 
       // ...
 

@@ -51,8 +51,7 @@ todoForm.addEventListener("submit", function(event) {
   if (todoText === "") {
     return;
   }
- // TODO: Describe the purpose of the following lines of code.
-  todos.push(todoText);
+  
   todoInput.value = "";
  
   // TODO: What will happen when the following functions are called?
