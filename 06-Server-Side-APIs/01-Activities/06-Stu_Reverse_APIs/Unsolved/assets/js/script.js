@@ -2,6 +2,7 @@ var requestUrl = 'https://api.github.com/orgs/Netflix/repos';
 
 // JQuery AJAX
 // TODO: Comment on how AJAX returns an API call
+// Ajax has you run an object
 $.ajax({
   url: requestUrl,
   method: 'GET',
@@ -12,6 +13,7 @@ $.ajax({
 
 // Browser Fetch Method
 // TODO: Comment on how Fetch returns an API call
+//fetch appears to be a function that uses the JSON object
 fetch(requestUrl)
   .then(function (response) {
     return response.json();
@@ -23,6 +25,8 @@ fetch(requestUrl)
 
 // Browser XMLHttpRequest
 // TODO: Comment on how XMLHttpRequest returns an API call
+// xhr appears to be a function built into the api that uses an event to start
+// xhr is the most native way to fetch and it uses an event loop to determine if the request is done
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function () {
   if (xhr.readyState === XMLHttpRequest.DONE) {

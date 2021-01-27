@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    var getAvg = function(numArr){
+        var arr = numArr
+        var array = 0
+        for (var i = 0; i<arr.length;i++){
+            array += arr[i]
+            var average = array/arr.length
+            return average
+        }
+      
+    };
+
+    console.log(getAvg([1,2,3,4,5]))
+    console.log(getAvg([5,6]))
+
+    </script>
+</body>
+</html>
