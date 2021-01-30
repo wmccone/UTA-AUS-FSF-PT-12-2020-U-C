@@ -21,11 +21,13 @@ var formSubmitHandler = function (event) {
 
 var buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
+  // TODO: Write your answe
+  // This section is applying the data language on the button to the variable
   var language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
   // TODO: Write your answer here
+// Language has a value applyrun the get featured repos function
   if (language) {
     getFeaturedRepos(language);
 
