@@ -14,17 +14,17 @@ let numTwo = parseInt(process.argv[4])
 let x
 
 switch (operation) {
-    case maths.sum:
-        x = maths.sum(numOne, numtwo);
+    case 'sum':
+        x = maths.sum(numOne, numTwo);
         break;
-    case maths.difference:
-        x = maths.difference(numOne, numtwo);
+    case 'difference':
+        x = maths.difference(numOne, numTwo);
         break;
-    case maths.product:
-        x = maths.product(numOne, numtwo);
+    case 'product':
+        x = maths.product(numOne, numTwo);
         break;
-    case maths.quotient:
-        x = maths.quotient(numOne, numtwo);
+    case 'quotient':
+        x = maths.quotient(numOne, numTwo);
         break;
         
 }

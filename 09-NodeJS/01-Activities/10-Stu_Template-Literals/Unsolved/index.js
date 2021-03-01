@@ -19,4 +19,3 @@ const songSnippet = `
 
 const element = document.getElementById("music");
 element.innerHTML = songSnippet;
-

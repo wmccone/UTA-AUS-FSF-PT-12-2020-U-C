@@ -4,7 +4,7 @@ const songs = ['Creep', 'Everlong', 'Bulls On Parade', 'Song 2', 'What I Got'];
 // TODO: Which operator is being used here?
 const newSongs = [...songs];
 
-// TODO: What do you expect to be logged in the console?
+// TODO: What do you expect to be logged in the console? spread
 console.log(newSongs);
 
 // Exercise 2
