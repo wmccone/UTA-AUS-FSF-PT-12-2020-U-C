@@ -6,13 +6,11 @@ class Store {
   }
 
   processProductSale(name) {
-    this.stock.forEach((item) => {
+    this.stock.forEach(item => {
       if (item.name === name) {
         if (item.count > 0) {
-          // TODO: Decrement the store's stock of item
-          item.count = item.count - 1
-          // TODO: Increase the store's revenue
-          this.revenue = this.revenue + item.price
+          item.count--;
+          this.revenue += item.price;
           console.log(`Purchased ${item.name} for ${item.price}`);
         } else {
           console.log(`Sorry, ${item.name} is out of stock!`);
@@ -22,10 +20,9 @@ class Store {
   }
 
   replenishStock(name, count) {
-    this.stock.forEach((item) => {
+    this.stock.forEach(item => {
       if (item.name === name) {
-        // TODO: Increase the store's stock of item
-        item.count += count
+        item.count += count;
         console.log(`Replenished ${item.name} by ${item.count}`);
       }
     });
