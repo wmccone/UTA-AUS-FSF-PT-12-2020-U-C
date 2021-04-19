@@ -39,6 +39,11 @@ app.get('/:character', (req, res) => {
 
   // What does this log?
   console.log(chosen);
+  for (i=0, i<characters.length; i++){
+    if (characters[i].routename===chosen){
+      content = characters[i]
+    }
+  }
 
   res.end();
 });

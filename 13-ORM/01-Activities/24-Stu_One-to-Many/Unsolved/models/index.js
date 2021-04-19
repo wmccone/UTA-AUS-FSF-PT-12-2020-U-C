@@ -11,4 +11,15 @@ LibraryCard.belongsTo(Reader, {
   foreignKey: 'reader_id',
 });
 
+// Define a Reader as having many Cars, thus creating a foreign key in the `car` table
+Reader.hasMany(Book, {
+  foreignKey: 'reader_id',
+  onDelete: 'CASCADE',
+});
+
+// The association can also be created from the Books side
+Book.belongsTo(Reader, {
+  foreignKey: 'reader_id',
+});
+
 module.exports = { Reader, Book, LibraryCard };

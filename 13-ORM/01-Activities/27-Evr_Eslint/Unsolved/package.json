@@ -6,10 +6,11 @@
   "scripts": {
     "start": "node server.js",
     "lint": "npx eslint **/*.js --quiet; exit 0",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "lint-fix": "eslint **/*.js --quiet --fix"
   },
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.9.0"
+    "eslint": "^7.23.0"
   }
 }

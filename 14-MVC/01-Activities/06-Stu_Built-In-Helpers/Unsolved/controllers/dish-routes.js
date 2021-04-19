@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 // We are using hardcoded data here, where would our data usually come from? Remember - we haven't yet set up a database or Sequelize in our app.
-const dishes = [
+const dishes = [s
   {
     id: 1,
     dish_name: 'French Bread with Brie Cheese',

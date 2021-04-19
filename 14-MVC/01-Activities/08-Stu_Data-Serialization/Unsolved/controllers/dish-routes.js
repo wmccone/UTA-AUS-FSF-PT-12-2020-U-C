@@ -3,7 +3,15 @@ const sequelize = require('../config/connection');
 const Dish = require('../models/Dish');
 
 router.get('/', async (req, res) => {
+  dishData
   // TODO: Build out this route so that it serializes all of the dish objects that it receives. See the 'get' route below for a hint.
+const dishData = await Dish.findAll();
+
+console.log(dishData)
+const dishes = dishData.map(dish) => get({plain: true})
+console.log(dishes)
+    res.render('all', {dishes});
+
 });
 
 // route to get one dish

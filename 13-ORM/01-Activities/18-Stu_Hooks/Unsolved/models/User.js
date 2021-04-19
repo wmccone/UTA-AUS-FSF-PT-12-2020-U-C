@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const { response } = require('express');
 
 class User extends Model {}
 
@@ -34,7 +35,25 @@ User.init(
   },
   {
     // TODO: Add hooks here
-
+    hooks: {
+      // Use the beforeCreate hook to work with data before a new instance is created
+      beforeCreate: async (newUserData) => {
+        // In this case, we are taking the user's email address, and making all letters lower case before adding it to the database.
+        try{newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      } catch (err){
+          response.status(400).json(err)
+        }
+      },
+      // Here, we use the beforeUpdate hook to make all of the characters lower case in an updated email address, before updating the database.
+      beforeUpdate: async (updatedUserData) => {
+        try{updatedUserData.password = await bcrypt.hash(updatedUserData.password,10)
+        return updatedUserData;
+      } catch(err){
+        response.status(400).json(err)
+      }
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

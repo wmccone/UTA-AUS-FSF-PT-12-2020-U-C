@@ -10,11 +10,17 @@ const connection = mysql.createConnection({
   user: 'root',
 
   // Be sure to update with your own MySQL password!
-  password: '',
+  password: process.env.PASSWORD,
   database: 'ice_creamDB',
 });
 
 const afterConnection = () => {
+  connection.query('SELECT * FROM products', (err, res) => {
+    if (err) throw err;
+    console.log(res);
+    connection.end();
+  });
+
   connection.query('SELECT * FROM products', (err, res) => {
     if (err) throw err;
     console.log(res);
