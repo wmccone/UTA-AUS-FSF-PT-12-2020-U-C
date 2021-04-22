@@ -1,0 +1,22 @@
+db.places.insert({
+    "name": "Winston",
+    "rownumber": "1",
+    "os": "Linux",
+    "hobbies":"Sleeping"
+    })
+
+
+db.places.update({"country": "Kenya"}, {$set: {"continent": "Africa"}})
+
+
+
+db.places.update({
+    "name": "Winston",
+    "rownumber": "1",
+    "os": "Linux",
+    "hobbies":"Sleeping"
+    })
+
+    db.places.update({"name": "Walter"}, {$set: {"hobbies":"Basket Weaving"}})
+    db.places.update({"name": "Winston"}, {$set: {"os":"Mac"}})
+    db.places.update({},{$set: {"gavecandy": true}}, {multi: true})
